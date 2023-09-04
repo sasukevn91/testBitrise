@@ -1,0 +1,64 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+SCHEME_DEBUG = 'TestBitrise'
+PROJECT_NAME = 'TestBitrise.xcodeproj'
+
+platform :ios do
+
+  lane :deploy do
+    config_cer_provision(
+      certificate_path: "./fastlane/certs/ent-ios-distr-cert.p12",
+      profile: "./fastlane/certs/Majica_Development_Inhouse.mobileprovision",
+      build_configuration: "Debug"
+    )
+
+    build_ios_app(
+      scheme: SCHEME_DEBUG,
+      configuration: "Debug", 
+      export_method: "enterprise",
+      output_directory: "./fastlane/ipa",
+      output_name: "TestBirise.ipa",
+      clean: true,
+      silent: true
+    )
+
+firebase_app_distribution(
+	app: "1:520357053325:ios:7954ec69e633b37a7433c4",
+      	ipa_path: "./fastlane/ipa/TestBirise.ipa",
+	googleservice_info_plist_path: "./GoogleService-Info.plist",
+	firebase_cli_path: "./node_modules/.bin/firebase"
+    )
+  end
+
+  desc "Import certificate"
+    private_lane :config_cer_provision do |options|
+    import_certificate(
+      keychain_name: "login.keychain",
+      certificate_path: "#{options[:certificate_path]}",
+      certificate_password: "majica202201"
+    )
+    
+    # update_project_provisioning(
+    #   xcodeproj: "Majica.xcodeproj",
+    #   profile: "#{options[:profile]}",
+    #   target_filter: "Majica",
+    #   build_configuration: "#{options[:build_configuration]}"
+    # )
+  end
+
+end

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>520357053325-vkhe7ec0f7g0fae9lv0nhtgrtpq7v8ok.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.520357053325-vkhe7ec0f7g0fae9lv0nhtgrtpq7v8ok</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCbHjSuQIx3kzxmHPR9D-YxVneA9Z3mym4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>520357053325</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ppih.majica.development</string>
+	<key>PROJECT_ID</key>
+	<string>test-2ceab</string>
+	<key>STORAGE_BUCKET</key>
+	<string>test-2ceab.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:520357053325:ios:7954ec69e633b37a7433c4</string>
+	<key>DATABASE_URL</key>
+	<string>https://test-2ceab.firebaseio.com</string>
+</dict>
+</plist>
